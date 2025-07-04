@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Health Nutrition Assistant</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+  <style>
+
+  .response-box {
+  background: #f1fff5;
+  padding: 20px;
+  border-left: 4px solid #4CAF50;
+  border-radius: 10px;
+  font-family: "Segoe UI", sans-serif;
+}
+.response-box h4 {
+  color: #2b7a2b;
+  margin-top: 20px;
+}
+.response-box ul {
+  padding-left: 20px;
+}
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0fdfb;
+      color: #333;
+    }
+
+    .carousel-slide-bg {
+      background: linear-gradient(-45deg, #d4f1f4, #75e6da, #189ab4, #05445e);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #fff;
+      padding: 4rem 1rem;
+      border-radius: 10px;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .urdu-text {
+      font-family: 'Noto Nastaliq Urdu', serif;
+      direction: rtl;
+      text-align: right;
+      font-size: 18px;
+    }
+
+    .step-box {
+      background: #ffffff;
+      border-left: 5px solid #189ab4;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .form-section {
+      background-color: #e6f9f8;
+      padding: 2rem;
+      border-radius: 12px;
+      margin-top: 2rem;
+    }
+
+    .footer {
+      background-color: #05445e;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+    }
+
+        .hero {
+            background-color: #05445e;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .step-badge {
+  background-color: #00b894;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  box-shadow: 0 5px 10px rgba(0, 184, 148, 0.2);
+}
+
+.step-box {
+  transition: transform 0.3s;
+}
+.step-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 184, 148, 0.2);
+}
+
+.steps-wrapper {
+  background: linear-gradient(to right, #e0f7f4, #f0fcf9);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.step-card {
+  background-color: white;
+  border-radius: 16px;
+  padding: 25px;
+  margin: 20px auto;
+  box-shadow: 0 5px 15px rgba(0, 184, 148, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 70%;
+  max-width: 600px;
+  position: relative;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 184, 148, 0.2);
+}
+
+.step-number {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00b894;
+  margin-bottom: 10px;
+}
+
+.arrow-down {
+  font-size: 32px;
+  color: #00b894;
+  margin: 0;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+
+.english-output h4 {
+  color: #157347;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.english-output ul {
+  padding-left: 20px;
+}
+
+.english-output li {
+  margin-bottom: 6px;
+}
+
+.card {
+  background-color: #f9fff9;
+  border-radius: 10px;
+  border: 1px solid #d4f4dd;
+}
+
+
+
+  </style>
+</head>
+<body>
+
+    <!-- ✅ Hero -->
+    <section class="hero">
+        <h1>🩺 Health Nutrition Assistant</h1>
+        <p>Get Natural Health Advice</p>
+    </section>
+<div class="container my-4">
+  <!-- Slogan Carousel -->
+  <div id="sloganCarousel" class="carousel slide carousel-slide-bg mb-5" data-bs-ride="carousel">
+    <div class="carousel-inner text-center">
+      <div class="carousel-item active">
+        <h2>🌿 Discover Natural Solutions</h2>
+        <p>Get health advice based on food, not just medicine.</p>
+      </div>
+      <div class="carousel-item">
+        <h2>🧠 Understand Your Body</h2>
+        <p>Find out what nutrients your body is missing.</p>
+      </div>
+      <div class="carousel-item">
+        <h2>🍎 Heal Through Nutrition</h2>
+        <p>Personalized fruit & plant recommendations to heal naturally.</p>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#sloganCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#sloganCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- App Details Section -->
+  <section class="my-5">
+    <div class="row g-4 align-items-stretch">
+      <!-- English Card -->
+      <div class="col-md-6">
+        <div class="p-4 rounded shadow-sm h-100" style="background-color: #e6f9f8;">
+          <h4 class="mb-3 text-primary"> How This App Works</h4>
+          <p><strong>Health Nutrition Assistant</strong> is designed to help users understand the possible nutritional causes behind their health issues — such as hair fall, weak bones, poor eyesight, or skin problems — and suggest natural remedies.</p>
+          <hr />
+          <h5 class="text-success"> Step-by-step Process:</h5>
+          <ul class="list-unstyled mt-3">
+            <li class="mb-2">✅ <strong>Analyze Affected Body Part:</strong> Detect which organ or area is linked to your symptom.</li>
+            <li class="mb-2">✅ <strong>Detect Deficiencies:</strong> Identify missing vitamins or minerals (e.g., calcium, iron, vitamin A).</li>
+            <li class="mb-2">✅ <strong>Suggest Natural Foods:</strong> Recommend fruits, herbs, or plants rich in those nutrients.</li>
+          </ul>
+          <p class="mt-3"> <em>All suggestions are based on natural remedies, not medication.</em></p>
+        </div>
+      </div>
+
+      <!-- Urdu Card -->
+      <div class="col-md-6">
+        <div class="p-4 rounded shadow-sm h-100 urdu-text" style="background-color: #e6f9f8;">
+          <h4 class="mb-3 text-primary"> ایپ کیسے کام کرتی ہے</h4>
+          <p><strong>ہیلتھ نیوٹریشن اسسٹنٹ</strong> آپ کی صحت کی علامات جیسے بالوں کا گرنا، ہڈیوں کی کمزوری، نظر کی خرابی یا جلدی مسائل کی غذائی وجوہات جاننے میں مدد دیتا ہے، اور قدرتی علاج تجویز کرتا ہے۔</p>
+          <hr />
+          <h5 class="text-success"> طریقہ کار:</h5>
+          <ul class="list-unstyled mt-3">
+            <li class="mb-2">✅ <strong>متاثرہ عضو کا تجزیہ:</strong> مسئلے سے جڑے جسمانی حصے کی شناخت کی جاتی ہے۔</li>
+            <li class="mb-2">✅ <strong>غذائی کمی کی تشخیص:</strong> وٹامن یا منرلز کی کمی کا اندازہ لگایا جاتا ہے۔</li>
+            <li class="mb-2">✅ <strong>قدرتی خوراک کی تجاویز:</strong> پھل یا پودے تجویز کیے جاتے ہیں جو ان اجزاء سے بھرپور ہوں۔</li>
+          </ul>
+          <p class="mt-3"> <em>تمام مشورے قدرتی علاج پر مبنی ہوتے ہیں، دوائی پر نہیں۔</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps-wrapper">
+    <h3 class="mb-5 text-success">🪜 Step-by-Step Guidance</h3>
+
+    <div class="step-card">
+      <div class="step-number">Step 1</div>
+      <h5>Enter Your Symptom</h5>
+      <p>Type any health issue like “hair fall” or “joint pain”.</p>
+    </div>
+
+    <div class="arrow-down">⬇</div>
+
+    <div class="step-card">
+      <div class="step-number">Step 2</div>
+      <h5>System Analyzes Body Part</h5>
+      <p>Detects which body area is affected and its structure.</p>
+    </div>
+
+    <div class="arrow-down">⬇</div>
+
+    <div class="step-card">
+      <div class="step-number">Step 3</div>
+      <h5>Find Nutrient Deficiency</h5>
+      <p>Finds which vitamins or minerals may be lacking.</p>
+    </div>
+
+    <div class="arrow-down">⬇</div>
+
+    <div class="step-card">
+      <div class="step-number">Step 4</div>
+      <h5>Suggest Natural Solutions</h5>
+      <p>Recommends fruits, herbs, or plants with needed nutrients.</p>
+    </div>
+  </section>
+
+
+
+  <!-- Input Form -->
+  <div class="form-section text-center">
+    <form method="POST">
+      <h4 class="mb-3">💬 Enter Your Symptom</h4>
+      <input type="text" name="symptom" class="form-control mb-3" placeholder="e.g. I have weak eyesight" required />
+      <button type="submit" class="btn btn-primary">Get My Advice</button>
+    </form>
+  </div>
+
+  <!-- Response Area -->
+  {% if response %}
+    <div class="mt-5 p-4 bg-light text-dark rounded">
+      <!-- English Response -->
+      <div class="card mb-4 p-3 shadow-sm border-success">
+        <h5 class="text-success">📄 English Response</h5>
+        <div class="english-output">
+          {{ response|safe }}
+        </div>
+      </div>
+
+    </div>
+  {% endif %}
+  {% if urdu %}
+    <div class="mt-3 p-4 bg-white text-dark rounded urdu-text">
+      <h5>📄 اردو جواب</h5>
+      <p>{{ urdu }}</p>
+    </div>
+  {% endif %}
+
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>Made with 💚 for better health. &copy; 2025 Health Nutrition Assistant</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

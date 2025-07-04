@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel - Query Log</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 30px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; }
+        th { background-color: #f2f2f2; }
+        .urdu { direction: rtl; text-align: right; font-family: 'Noto Nastaliq Urdu', serif; }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h2>📊 Admin Panel – Query History</h2>
+    <a href="/export">📥 Export as CSV</a>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Question</th>
+            <th>Answer (EN)</th>
+            <th>Answer (UR)</th>
+            <th>Action</th>
+        </tr>
+        {% for item in memory %}
+        <tr>
+            <td>{{ loop.index0 }}</td>
+            <td>{{ item.question }}</td>
+            <td>{{ item.answer }}</td>
+            <td class="urdu">{{ item.urdu_answer }}</td>
+            <td><a href="/delete/{{ loop.index0 }}">❌ Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
