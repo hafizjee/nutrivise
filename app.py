@@ -37,7 +37,7 @@ def format_prompt(user_query):
     )
 
 def call_openrouter(prompt):
-    API_KEY = "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"
+    API_KEY = os.getenv("OPENROUTER_API_KEY")
     MODEL = "mistralai/mistral-7b-instruct"
     url = "https://openrouter.ai/api/v1/chat/completions"
     headers = {
@@ -55,7 +55,8 @@ def call_openrouter(prompt):
     if response.status_code == 200:
         return response.json()['choices'][0]['message']['content']
     else:
-        return "Error fetching response."
+        return f"Error fetching response: {response.text}"
+
 def format_response(text):
     sections = {
         "Affected Body Part": [],
