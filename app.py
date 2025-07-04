@@ -1,9 +1,8 @@
-from flask import Flask, request, render_template, send_file, redirect, url_for
+from flask import Flask, request, render_template, send_file, redirect
 import requests
 import json
 import os
 import csv
-from datetime import datetime
 
 app = Flask(__name__)
 
@@ -51,11 +50,20 @@ def call_openrouter(prompt):
             {"role": "user", "content": prompt}
         ]
     }
-    response = requests.post(url, headers=headers, json=payload)
-    if response.status_code == 200:
-        return response.json()['choices'][0]['message']['content']
-    else:
-        return f"Error fetching response: {response.text}"
+
+    try:
+        print("Loaded API KEY:", API_KEY[:8] if API_KEY else "None")
+        response = requests.post(url, headers=headers, json=payload)
+        print("API Response Status:", response.status_code)
+        print("API Response Text:", response.text)
+
+        if response.status_code == 200:
+            return response.json()['choices'][0]['message']['content']
+        else:
+            return f"<p style='color:red;'>Error: {response.status_code} - {response.text}</p>"
+    except Exception as e:
+        print("API Call Exception:", str(e))
+        return f"<p style='color:red;'>Exception occurred: {str(e)}</p>"
 
 def format_response(text):
     sections = {
